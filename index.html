@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cálculo de la ingesta de carbohidratos (CHO) en competición</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="language-switcher">
+    <button onclick="changeLanguage('es')" class="language-button">
+      <img src="spanish-flag.png" alt="Bandera de España" class="flag-icon" style="width: 50px; height: auto;">
+    </button>
+    <button onclick="changeLanguage('en')" class="language-button">
+      <img src="english-flag.png" alt="English Flag" class="flag-icon" style="width: 50px; height: auto;">
+    </button>
+  </div>
+
+  <div id="app">
+    <h1 id="title">Cálculo de la ingesta de carbohidratos (CHO) en competición</h1>
+    <div id="formulario">
+      <label for="masa" id="masa-label">Masa corporal (kg):</label>
+      <input type="number" id="masa" name="masa" min="0">
+      <label for="duracion" id="duracion-label">Duración del ejercicio (minutos):</label>
+      <input type="number" id="duracion" name="duracion" min="0">
+      <button onclick="calcularCarbohidratos()" id="calculate-button">Calcular CHO</button>
+    </div>
+    <div id="resultado" class="resultado-hidden">
+      <p id="linea1" class="linea-resultado"><span class="bold-white" id="carbo-quantity-label">La cantidad de CHO que tienes que ingerir es de: </span><span id="cantidadCarbohidratos"></span></p>
+      <p id="linea2" class="linea-resultado"><span class="bold-white" id="carbo-type-label">El tipo de CHO recomendados son: </span><span id="tipoCHORecomendados"></span></p>
+      <p id="linea3" class="linea-resultado"><span class="bold-white" id="additional-info-label">Información adicional: </span><span id="informacionAdicional"></span></p>
+    </div>
+  </div>
+
+  <!-- Tabla en español -->
+  <table id="tabla-es" class="tabla-hidden">
+    <thead>
+      <tr>
+        <th>Duración del ejercicio</th>
+        <th>Cantidad de CHO necesaria</th>
+        <th colspan="2">Tipos de CHO recomendados</th>
+        <th>Información adicional</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>30-75 minutos</td>
+        <td>Cantidad mínima</td>
+        <td colspan="2">Fuentes únicas o múltiples de CHO</td>
+        <td>Entrenamiento nutricional recomendado</td>
+      </tr>
+      <tr>
+        <td>1-2 horas</td>
+        <td>0.5 g/kg/min (~30 g/h)</td>
+        <td colspan="2">Fuentes únicas o múltiples de CHO</td>
+        <td>Entrenamiento nutricional recomendado</td>
+      </tr>
+      <tr>
+        <td>2-3 horas</td>
+        <td>1 g/kg/min (~60 g/h)</td>
+        <td colspan="2">Fuentes únicas o múltiples de CHO</td>
+        <td>Entrenamiento nutricional altamente recomendado</td>
+      </tr>
+      <tr>
+        <td>&gt;3 horas</td>
+        <td>1.5 g/kg/min (~90 g/h)</td>
+        <td colspan="2">Fuentes múltiples de CHO</td>
+        <td>Entrenamiento nutricional esencial</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Tabla en inglés -->
+  <table id="tabla-en" class="tabla-hidden">
+    <thead>
+      <tr>
+        <th>Exercise Duration</th>
+        <th>Amount of CHO necessary</th>
+        <th colspan="2">Recommended CHO types</th>
+        <th>Additional information</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>30-75 minutes</td>
+        <td>Minimum amount</td>
+        <td colspan="2">Single or multiple sources of CHO</td>
+        <td>Nutritional training recommended</td>
+      </tr>
+      <tr>
+        <td>1-2 hours</td>
+        <td>0.5 g/kg/min (~30 g/h)</td>
+        <td colspan="2">Single or multiple sources of CHO</td>
+        <td>Nutritional training recommended</td>
+      </tr>
+      <tr>
+        <td>2-3 hours</td>
+        <td>1 g/kg/min (~60 g/h)</td>
+        <td colspan="2">Single or multiple sources of CHO</td>
+        <td>Highly recommended nutritional training</td>
+      </tr>
+      <tr>
+        <td>&gt;3 hours</td>
+        <td>1.5 g/kg/min (~90 g/h)</td>
+        <td colspan="2">Multiple sources of CHO</td>
+        <td>Essential nutritional training</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="footer">
+    <img src="nff_logo.png" alt="Logotipo de NFF" style="width: 100px; height: auto;">
+    <p id="footer-text">Creado por Non functional fatigue®</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
